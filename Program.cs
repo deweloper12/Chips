@@ -32,6 +32,7 @@ namespace Chips
             }
 
             Calc calc = new Calc(chips);
+            calc.arrange();
             int steps = calc.getSteps();
 
             Console.WriteLine(steps);
@@ -51,11 +52,14 @@ namespace Chips
             chips = _chips;
         }
 
-        public int getSteps()
+        public void arrange()
         {
             calcMiddle();
             replace();
+        }
 
+        public int getSteps()
+        {
             return steps;
         }
 
