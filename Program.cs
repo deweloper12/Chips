@@ -91,7 +91,6 @@ namespace Chips
                     chips[right]++;
                     chips[maxRight]--;
                 }
-                
             }
             steps++;
 
