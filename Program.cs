@@ -38,7 +38,6 @@ namespace Chips
             Console.WriteLine(steps);
             Console.Read();
         }
-
     }
 
     class Calc
