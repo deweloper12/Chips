@@ -21,7 +21,14 @@ namespace Chips
             int[] chips = new int[chipsStrs.Length];
             for (int i = 0; i < chipsStrs.Length; i++)
             {
-                chips[i] = Convert.ToInt16(chipsStrs[i]);
+                try
+                {
+                    chips[i] = Convert.ToInt16(chipsStrs[i]);
+                }
+                catch
+                {
+                    return;
+                }
             }
 
             Calc calc = new Calc(chips);
