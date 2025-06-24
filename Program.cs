@@ -141,17 +141,5 @@ namespace Chips
             }
             middle = sum / chips.Length;
         }
-
-        private bool isEqual()
-        {
-            foreach (int chip in chips)
-            {
-                if (chip != middle)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
     }
 }
