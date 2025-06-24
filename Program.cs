@@ -12,6 +12,10 @@ namespace Chips
                 int bracket = input.IndexOf('[');
                 input = input.Substring(bracket + 1, input.Length - bracket - 2);
             }
+            else
+            {
+                return;
+            }
 
             string[] chipsStrs = input.Split(',');
             int[] chips = new int[chipsStrs.Length];
