@@ -45,7 +45,7 @@ namespace Chips
     {
         int[] chips;
         int  middle;
-        int steps = 0;
+        int steps;
 
         public Calc(int[] _chips)
         {
@@ -54,6 +54,7 @@ namespace Chips
 
         public void arrange()
         {
+            steps = 0;
             calcMiddle();
             replace();
         }
