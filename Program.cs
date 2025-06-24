@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Chips
 {
@@ -6,7 +6,7 @@ namespace Chips
     {
         static void Main(string[] args)
         {
-            string input = "chips: [1, 5, 9, 10, 5]";
+            string input = Console.ReadLine();
             if (input.StartsWith("chips:") && input.EndsWith("]"))
             {
                 int bracket = input.IndexOf('[');
@@ -24,7 +24,6 @@ namespace Chips
             int steps = calc.getSteps();
 
             Console.WriteLine(steps);
-
             Console.Read();
         }
 
@@ -44,8 +43,6 @@ namespace Chips
         public int getSteps()
         {
             calcMiddle();
-
-
             replace();
 
             return steps;
@@ -122,6 +119,7 @@ namespace Chips
                 return chips.Length-1;
             }
         }
+
         private int rightIndex(int maxIndex)
         {
             if (maxIndex < chips.Length-1)
@@ -156,6 +154,4 @@ namespace Chips
             return true;
         }
     }
-
-
 }
