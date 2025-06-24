@@ -31,39 +31,39 @@ namespace Chips
                 }
             }
 
-            Calc calc = new Calc(chips);
-            calc.arrange();
-            int steps = calc.getSteps();
+            Calc.setChips(chips);
+            Calc.arrange();
+            int steps = Calc.getSteps();
 
             Console.WriteLine(steps);
             Console.Read();
         }
     }
 
-    class Calc
+    static class Calc
     {
-        int[] chips;
-        int  middle;
-        int steps;
+        static int[] chips;
+        static int middle;
+        static int steps;
 
-        public Calc(int[] _chips)
+        static public void setChips(int[] _chips)
         {
             chips = _chips;
         }
 
-        public void arrange()
+        static public void arrange()
         {
             steps = 0;
             calcMiddle();
             replace();
         }
 
-        public int getSteps()
+        static public int getSteps()
         {
             return steps;
         }
 
-        private int maxIndex()
+        static private int maxIndex()
         {
             int maxIndex = 0;
             int max = 0;
@@ -78,7 +78,7 @@ namespace Chips
             return maxIndex;
         }
 
-        private void replace()
+        static private void replace()
         {
             int max = maxIndex();
 
@@ -108,7 +108,7 @@ namespace Chips
             replace();
         }
 
-        private int maxRightIndex(int max)         //Правая граница последовательности максимальных значений
+        static private int maxRightIndex(int max)         //Правая граница последовательности максимальных значений
         {
             int maxRight = max;
             for (int i = max + 1; i < chips.Length ; i++)
@@ -122,7 +122,7 @@ namespace Chips
             return maxRight;
         }
 
-        private int leftIndex(int maxIndex)
+        static private int leftIndex(int maxIndex)
         {
             if (maxIndex > 0)
             {
@@ -134,7 +134,7 @@ namespace Chips
             }
         }
 
-        private int rightIndex(int maxIndex)
+        static private int rightIndex(int maxIndex)
         {
             if (maxIndex < chips.Length-1)
             {
@@ -146,7 +146,7 @@ namespace Chips
             }
         }
 
-        private void calcMiddle()
+        static private void calcMiddle()
         {
             int sum = 0;
             foreach (int chip in chips)
